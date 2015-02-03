@@ -25,7 +25,7 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "US/Eastern"
+TIME_ZONE = "Europe/London"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -75,9 +75,6 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = "{{ secret_key }}"
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = [
     "django.template.loaders.filesystem.Loader",
@@ -111,10 +108,10 @@ MIDDLEWARE_CLASSES = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "{{ project_name }}.urls"
+ROOT_URLCONF = "esp_2015.urls"
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = "{{ project_name }}.wsgi.application"
+WSGI_APPLICATION = "esp_2015.wsgi.application"
 
 TEMPLATE_DIRS = [
     os.path.join(PACKAGE_ROOT, "templates"),
@@ -160,8 +157,8 @@ INSTALLED_APPS = [
     "symposion.teams",
 
     # project
-    "{{ project_name }}",
-    "{{ project_name }}.proposals"
+    "esp_2015",
+    "esp_2015.proposals"
 ]
 
 # A sample logging configuration. The only tangible logging
@@ -217,12 +214,14 @@ AUTHENTICATION_BACKENDS = [
 
 
 MARKITUP_SET = "markitup/sets/markdown"
-MARKITUP_FILTER = ["symposion.markdown_parser.parse", {}]
+MARKITUP_FILTER = ["markdown.markdown", {}]
 MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 PROPOSAL_FORMS = {
-    "tutorial": "{{ project_name }}.proposals.forms.TutorialProposalForm",
-    "talk": "{{ project_name }}.proposals.forms.TalkProposalForm",
+    "tutorial": "esp_2015.proposals.forms.TutorialProposalForm",
+    "talk": "esp_2015.proposals.forms.TalkProposalForm",
 }
+
+from local_settings import *

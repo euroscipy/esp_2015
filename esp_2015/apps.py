@@ -4,7 +4,7 @@ from django.utils.importlib import import_module
 
 class AppConfig(BaseAppConfig):
 
-    name = "{{ project_name }}"
+    name = "esp_2015"
 
     def ready(self):
-        import_module("{{ project_name }}.receivers")
+        import_module("esp_2015.receivers")

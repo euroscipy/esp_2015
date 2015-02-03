@@ -134,7 +134,7 @@
             "hint": "", 
             "url": "sponsor_list", 
             "inbreadcrumbs": true, 
-            "title": "{{ SITE_NAME }} Sponsors", 
+            "title": "EuroSciPy 2015 Sponsors",
             "tree": 1, 
             "access_perm_type": 1, 
             "alias": null, 
