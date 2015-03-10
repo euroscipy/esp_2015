@@ -7,13 +7,13 @@ from django.contrib import admin
 
 import symposion.views
 
-
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 
 urlpatterns = patterns(
     "",
-    url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+    url(r"^$", "symposion.cms.views.page", {'path' : 'home/'}, name="home"),
+    url(r"^_edit/$", "symposion.cms.views.page_edit", {'path' : 'home/'}, name="cms_page_edit"),
     url(r"^admin/", include(admin.site.urls)),
 
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
