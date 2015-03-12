@@ -1,0 +1,12 @@
+[
+    {
+        "pk": 1, 
+        "model": "symposion_cms.page",
+        "fields": {
+            "title": "EuroSciPy 2015 home",
+            "path": "home/",
+            "body": "Welcome to EuroSciPy 2015!",
+            "_body_rendered": "<p>Welcome to EuroSciPy 2015!</p>"
+        }
+    }
+]
