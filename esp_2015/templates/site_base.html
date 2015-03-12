@@ -22,6 +22,7 @@
 {% block navbar_class %}navbar-fixed-top{% endblock %}
 {% block wrapper_class %}outer-container{% endblock %}
 {% block site_brand %}
+    <img src="{% static "esp_2015/img/logo.png" %}" />
     <a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>
 {% endblock %}
 
