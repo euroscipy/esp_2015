@@ -212,6 +212,7 @@ AUTHENTICATION_BACKENDS = [
     "account.auth_backends.EmailAuthenticationBackend",
 ]
 
+ACCOUNT_USER_DISPLAY = lambda user: user.email
 
 MARKITUP_SET = "markitup/sets/markdown"
 MARKITUP_FILTER = ["markdown.markdown", {}]
