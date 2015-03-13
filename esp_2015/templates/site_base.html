@@ -39,6 +39,7 @@
                 <div class="col-md-9">
                     {% block body %}
                     {% endblock %}
+                    {% if page.path == "home/" %}{% include "_twitter_widget.html" %}{% endif %}
                 </div>
                 <div class="col-md-3">
                     {% block sidebar %}
