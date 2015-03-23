@@ -223,6 +223,7 @@ SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 PROPOSAL_FORMS = {
     "tutorial": "esp_2015.proposals.forms.TutorialProposalForm",
     "talk": "esp_2015.proposals.forms.TalkProposalForm",
+    "poster": "esp_2015.proposals.forms.PosterProposalForm",
 }
 
 from local_settings import *

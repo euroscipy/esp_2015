@@ -2,7 +2,7 @@ from django import forms
 
 from markitup.widgets import MarkItUpWidget
 
-from .models import TalkProposal, TutorialProposal
+from .models import TalkProposal, TutorialProposal, PosterProposal
 
 
 class ProposalForm(forms.ModelForm):
@@ -34,6 +34,23 @@ class TalkProposalForm(ProposalForm):
         }
 
 
+class PosterProposalForm(ProposalForm):
+
+    class Meta:
+        model = PosterProposal
+        fields = [
+            "title",
+            "audience_level",
+            "description",
+            "abstract",
+            "additional_notes",
+            "recording_release",
+        ]
+        widgets = {
+            "abstract": MarkItUpWidget(),
+            "additional_notes": MarkItUpWidget(),
+        }
+
 class TutorialProposalForm(ProposalForm):
 
     class Meta:
@@ -50,3 +67,4 @@ class TutorialProposalForm(ProposalForm):
             "abstract": MarkItUpWidget(),
             "additional_notes": MarkItUpWidget(),
         }
+
