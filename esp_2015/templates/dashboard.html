@@ -35,6 +35,12 @@
                 <p>To submit a proposal, you must first <a href="{% url "speaker_create" %}">create a speaker profile</a>.</p>
             {% else %}
                 <h4>Your Proposals</h4>
+                <p>
+                In the proposals, the first text box will appear "as is" in the final program, fill it carefully.
+                The full abstract comes in the second box and can include subtitles, links, etc. It will also be public.
+                You may suggest the duration (for talks) to 10, 20 or 30 minutes.
+                If you need support, contact euroscipy-org@python@org
+                </p>
                 {% if user.speaker_profile.proposals.exists %}
                     <table class="table">
                         <tr>
