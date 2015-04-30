@@ -1,0 +1,3 @@
+[submodule "plata_2015"]
+	path = plata_2015
+	url = git@github.com:euroscipy/plata_2015.git
