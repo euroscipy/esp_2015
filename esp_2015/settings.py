@@ -93,6 +93,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "account.context_processors.account",
     "pinax_theme_bootstrap.context_processors.theme",
     "symposion.reviews.context_processors.reviews",
+    'plata.context_processors.plata_context',
 ]
 
 
@@ -158,8 +159,21 @@ INSTALLED_APPS = [
 
     # project
     "esp_2015",
-    "esp_2015.proposals"
+    "esp_2015.proposals",
+
+    # plata
+    'simple_shop',
+    'plata',
+    'plata.contact', # Not strictly required (contact model can be exchanged)
+    'plata.discount',
+    'plata.payment',
+    'plata.shop',
 ]
+
+PLATA_SHOP_PRODUCT = 'simple_shop.Product'
+
+CURRENCIES = ('GBP',)
+PLATA_PAYMENT_MODULES = [ 'plata.payment.modules.cod.PaymentProcessor' ]
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
