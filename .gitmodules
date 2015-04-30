@@ -1,3 +1,9 @@
 [submodule "plata_2015"]
 	path = plata_2015
 	url = git@github.com:euroscipy/plata_2015.git
+[submodule "pdfdocument"]
+	path = pdfdocument
+	url = git@github.com:matthiask/pdfdocument.git
+[submodule "pdfdocument_2015"]
+	path = pdfdocument_2015
+	url = git@github.com:euroscipy/pdfdocument_2015.git
