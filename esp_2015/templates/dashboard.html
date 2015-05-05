@@ -218,4 +218,46 @@
             </div>
         </div>
     {% endif %}
+
+    <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+            <i class="fa fa-briefcase"></i>
+            <h3>{% trans "Registration" %}</h3>
+        </div>
+        <div class="dashboard-panel-content">
+
+        <p> To register to the conference, please go to the ticketing section of the website.
+            You can buy separately a registration to the talks and tutorials by adding them successively to your shopping cart, then you may follow the checkout process to confirm your payment. Be reminded that after adding, say, a tutorial registration, you will be directed to the shopping cart and need to go back to the "Products" page to add the conference registration.
+        </p>
+        <p> <strong> README: </strong> On the checkout page, you have to fill in your name and contact address. Your proof of payment will contain that information and <strong> cannot be modified </strong> afterwards. Check the <a href="/registration/">registration page</a> if you would like more information.
+        </p>
+        <p> Payments are made to <a href="https://enthought.com/">Enthought</a> (organizer) and processed directly by <a href="https://www.paypal.com/">PayPal</a> and our own server has no access to credit card information at any time.
+            Orders that are completed acquire the status "Order has been paid" in the list below. Orders that are not completed will remain displayed below and cannot be deleted. This has no negative consequences.
+        </p>
+
+        <p> To proceed, follow this <a href="{% url "plata_home" %}">link</a>. Questions about the registration process should be directed to euroscipy-org@python.org</p>
+
+        <h4>Your orders</h4>
+        <table class="table table-condensed">
+            <thead>
+                <th>#</th>
+                <th>Items</th>
+                <th>Status</th>
+                <th>Invoice</th>
+            </thead>
+            <tbody>
+                {% for order in user.orders.all %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>
+                            {% for item in order.items.all %} {{ item.name }} <br /> {% endfor %}
+                        </td>
+                        <td>{{ order.get_status_display }}</td>
+                        <td><a href="{% url "plata_reporting_invoice" order.id %}">Invoice #{{ order.id }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
 {% endblock %}
