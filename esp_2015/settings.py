@@ -173,7 +173,6 @@ INSTALLED_APPS = [
 PLATA_SHOP_PRODUCT = 'simple_shop.Product'
 
 CURRENCIES = ('GBP',)
-PLATA_PAYMENT_MODULES = [ 'plata.payment.modules.cod.PaymentProcessor' ]
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
