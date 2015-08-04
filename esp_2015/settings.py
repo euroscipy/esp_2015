@@ -228,7 +228,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_USER_DISPLAY = lambda user: user.email
 
 MARKITUP_SET = "markitup/sets/markdown"
-MARKITUP_FILTER = ["markdown.markdown", {}]
+MARKITUP_FILTER = ("markdown.markdown", {"safe_mode": True, "extensions":['extra']})
 MARKITUP_SKIN = "markitup/skins/simple"
 
 CONFERENCE_ID = 1
