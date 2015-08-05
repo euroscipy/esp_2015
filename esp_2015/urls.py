@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 
 import symposion.views
+import esp_2015.views
 from simple_shop.views import shop
 
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
@@ -31,6 +32,7 @@ urlpatterns = patterns(
     url(r"^schedule/", include("symposion.schedule.urls")),
     url(r"^markitup/", include("markitup.urls")),
     url(r"^ticketing/", include("simple_shop.urls")),
+    url(r"^registration_count/", esp_2015.views.registration_count, name="registration_count"),
 
     url(r"^", include("symposion.cms.urls")),
 )
